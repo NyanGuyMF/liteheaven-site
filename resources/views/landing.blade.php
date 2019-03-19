@@ -200,7 +200,7 @@
             без гриферства с друзьями.</p>
         </div>
         <div class="col-md-4"><!-- server 3 -->
-          <img src="{{ URL::asset('img/server3.jpg') }}" class="img-responsive" style="margin: 0 auto;">
+          <img src="{{ URL::asset('img/server-3.jpg') }}" class="img-responsive" style="margin: 0 auto;">
           <h3>Мини-игры<br><span id="soon">(скоро)</span></h3>
           <p>Самый популярный раздел Minecraf - мини-игры.
             Чтобы не отставать от трендов мы делаем свои!</p>
