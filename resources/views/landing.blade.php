@@ -102,7 +102,7 @@
         <div class="col-md-8 col-md-offset-2">
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-support.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-support.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>Отзывчивые Админы</h3>
@@ -111,7 +111,7 @@
           </div>
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-gamepad.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-gamepad.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>Мини-игры <span id="soon">(скоро)</span></h3>
@@ -120,7 +120,7 @@
           </div>
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-community.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-community.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>Хорошее комьюнити</h3>
@@ -132,7 +132,7 @@
         <div class="col-md-8 col-md-offset-2" style="margin-top:30px">
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-leaderboards.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-leaderboards.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>Топ игроков</h3>
@@ -141,7 +141,7 @@
           </div>
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-protect.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-protect.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>DDoS защита</h3>
@@ -150,7 +150,7 @@
           </div>
           <div class="col-md-4">
             <div class="col-md-4">
-              <img class="feature-img img-responsive" src="img/features/feature-ranking.jpg" style="height:auto">
+              <img class="feature-img img-responsive" src="{{ URL::asset('img/features/feature-ranking.jpg') }}" style="height:auto">
             </div>
             <div class="col-md-8">
               <h3>Кланы</h3>
@@ -188,19 +188,19 @@
       <div class="col-md-8 col-md-offset-2">
 
         <div class="col-md-4"><!-- server 1 -->
-          <img src="img/server-1.jpg" class="img-responsive" style="margin: 0 auto;">
+          <img src="{{ URL::asset('img/server-1.jpg') }}" class="img-responsive" style="margin: 0 auto;">
           <h3>Чарли<br><span id="soon">(скоро)</span></h3>
           <p>Наш первый игровой сервер с самой лучшей оптимизацией.
             Тихое выживание или мирные постройки - это про этот сервер.</p>
         </div>
         <div class="col-md-4"><!-- server 2 -->
-          <img src="img/server-2.jpg" class="img-responsive" style="margin: 0 auto;">
+          <img src="{{ URL::asset('img/server-2.jpg') }}" class="img-responsive" style="margin: 0 auto;">
           <h3>Vanilla</h3>
           <p>Данный проект планируется, как закрытый сервер выживания
             без гриферства с друзьями.</p>
         </div>
         <div class="col-md-4"><!-- server 3 -->
-          <img src="img/server-3.jpg" class="img-responsive" style="margin: 0 auto;">
+          <img src="{{ URL::asset('img/server3.jpg') }}" class="img-responsive" style="margin: 0 auto;">
           <h3>Мини-игры<br><span id="soon">(скоро)</span></h3>
           <p>Самый популярный раздел Minecraf - мини-игры.
             Чтобы не отставать от трендов мы делаем свои!</p>
@@ -224,7 +224,7 @@
             <a href="#buy-donate" class="btn btn-danger effect effect-1" style="width: 196px; display: inline-block"> Купить донат </a>
         </div>
         <div class="col-md-4">
-          <img class="visible-lg" src="img/3d-skin.png">
+          <img class="visible-lg" src="{{ URL::asset('img/3d-skin.png') }}">
         </div>
       </div>
     </div>
