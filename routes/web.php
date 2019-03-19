@@ -19,3 +19,19 @@ Route::get('/', function () {
 
     return view('landing');
 });
+
+Route::get('/driver/{driverName}', function($driverName) {
+    $driversDir = public_path(). '/drivers';
+    switch ($driverName) {
+        case 'h2':
+            return response()->download($driversDir. '/h2-driver.jar', 'h2-driver.jar');
+        case 'postgresql':
+            return response()->download($driversDir. '/postgresql-driver.jar', 'postgresql-driver.jar');
+        case 'mysql':
+            return response()->download($driversDir. '/mysql-driver.jar', 'mysql-driver.jar');
+
+        default:
+            return '{"error": "Unknown driver"}';
+            break;
+    }
+});
