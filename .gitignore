@@ -1,6 +1,14 @@
 
-# Created by https://www.gitignore.io/api/git,linux,laravel
-# Edit at https://www.gitignore.io/?templates=git,linux,laravel
+# Created by https://www.gitignore.io/api/git,linux,laravel,composer,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=git,linux,laravel,composer,visualstudiocode
+
+### Composer ###
+composer.phar
+/vendor/
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -18,7 +26,6 @@
 *_REMOTE_*.txt
 
 ### Laravel ###
-/vendor/
 node_modules/
 npm-debug.log
 yarn-error.log
@@ -35,6 +42,7 @@ storage/*.key
 Homestead.yaml
 Homestead.json
 /.vagrant
+.phpunit.result.cache
 
 ### Linux ###
 *~
@@ -51,14 +59,16 @@ Homestead.json
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# End of https://www.gitignore.io/api/git,linux,laravel/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/git,linux,laravel,composer,visualstudiocode
+

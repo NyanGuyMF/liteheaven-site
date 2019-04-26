@@ -50,7 +50,7 @@ span#soon {
 header {
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
 	text-align: center;
-	background-image: url('img/header-bg.jpg');
+	background-image: url('https://liteheaven.ru/img/header-bg.jpg');
 	background-position: top;
 	background-size: cover;
 	padding: 30px 0;

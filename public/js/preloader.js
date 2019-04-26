@@ -18,7 +18,6 @@ function image_loaded() {
     {
         setTimeout(function() {
             let preloader   =   document.getElementById('preloader');
-            console.log(preloader);
             if (!preloader.classList.contains('done')) {
                 preloader.classList.add('done');
             }

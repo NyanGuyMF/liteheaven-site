@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="msapplication-TileColor" content="#d62414">
   <meta name="theme-color" content="#d62414">
-  <title>LiteHeaven | 185.159.130.118</title>
-  <link rel="shortcut icon" href="img/logo.png" type="image/png">
+  <title>LiteHeaven | 193.187.175.28</title>
+  <link rel="shortcut icon" href="{{ URL::asset('/img/logo.png') }}" type="image/png">
 
   <!-- meta for searchers -->
   <meta name = "robots" content = "index,follow"/>

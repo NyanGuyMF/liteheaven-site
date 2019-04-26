@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    if (strpos($_SERVER['HTTP_HOST'], '185.159.130.118') !== false) {
+    if (strpos($_SERVER['HTTP_HOST'], '193.187.175.28') !== false) {
         \Log::info('User with IP '.  Request::ip(). ' has requested server by IP address.');
         return view('error/403');
     }
@@ -35,3 +35,7 @@ Route::get('/driver/{driverName}', function($driverName) {
             break;
     }
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
