@@ -11,19 +11,19 @@ class VkRequestController extends Controller {
             'secret_key'  => 'tZQLjd4ay94P9BWphedT',
         ],
     ];
-    
+
     public function handle() {
-        $request = json_decode(file_get_contents('php://input'));
+        $request = json_decode(file_get_contents('php://input'), true);
 
         if (!(array_key_exists('type', $request) && array_key_exists('group_id', $request))) {
             return 'Malformed JSON request';
         }
 
         $group_id = $request['group_id'];
-        
+
         switch (strtolower($request['type'])) {
             case 'confirmation':
-                return handleConfirmation($group_id);
+                return self::handleConfirmation($group_id);
 
             default:
                 \Log::info('Unknown vk request type: '. $request['type']);
@@ -32,12 +32,13 @@ class VkRequestController extends Controller {
     }
 
     private function handleConfirmation($group_id) {
-        if (!array_key_exists($group_id, $groups)) {
+        if (!array_key_exists($group_id, $$this->groups)) {
             \Log::info('Unknown vk group: '. $group_id);
             return 'Unknown group';
         }
 
-        return $groups[$group_id]['confirm'];
+        echo $$this->groups[$group_id]['confirm'];
+        return 'ok';
     }
 }
 
