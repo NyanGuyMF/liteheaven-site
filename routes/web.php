@@ -45,4 +45,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /** API routers */
-Route::post('api/vkbot', 'VkRequestController@handle');
+Route::post('api/vkbot', 'VkBot\VkRequestController@handle');
