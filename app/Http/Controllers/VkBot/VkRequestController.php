@@ -37,8 +37,7 @@ class VkRequestController extends Controller {
             return 'Unknown group';
         }
 
-        echo $this->groups[$group_id]['confirm'];
-        return 'ok';
+        return $this->groups[$group_id]['confirm'];
     }
 }
 
