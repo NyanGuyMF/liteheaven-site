@@ -32,12 +32,12 @@ class VkRequestController extends Controller {
     }
 
     private function handleConfirmation($group_id) {
-        if (!array_key_exists($group_id, $$this->groups)) {
+        if (!array_key_exists($group_id, $this->groups)) {
             \Log::info('Unknown vk group: '. $group_id);
             return 'Unknown group';
         }
 
-        echo $$this->groups[$group_id]['confirm'];
+        echo $this->groups[$group_id]['confirm'];
         return 'ok';
     }
 }
