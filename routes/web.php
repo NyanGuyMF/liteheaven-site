@@ -43,3 +43,6 @@ Route::get('/driver/{driverName}', function($driverName) {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/** API routers */
+Route::post('api/vkbot', 'VkRequestController@handle');
