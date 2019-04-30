@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class VkValidator extends Middleware
+class VkValidator
 {
     /**
      * Handle an incoming request.
