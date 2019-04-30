@@ -15,8 +15,21 @@ class VkValidator
      */
     public function handle($request, Closure $next)
     {
-        \Log::info($_POST);
-        
+        $vk_request       = json_decode(file_get_contents('php://input'), true);
+        $groups_config    = config('vk.groups');
+        $is_request_valid = array_key_exists('group_id') && array_key_exists('secret');
+
+        if ( !$is_request_valid )
+            return 'Malformed request';
+
+        $group_id = $vk_request['group_id'];
+            
+        if ( !array_key_exists($group_id) )
+            return 'Not registereg group.';
+
+        if ( $groups_config[$group_id]['secret'] != $vk_request['secret'] )
+            return 'Invalid secret key.';
+
         return $next($request);
     }
 }

@@ -228,4 +228,18 @@ return [
 
     ],
 
+    /** Custom configuration variables */
+    
+    'vkbot' => [
+
+        'groups' => [
+            '174017128' => [
+                'confirm' => '0ce90217',
+                'secret' => 'tZQLjd4ay94P9BWphedT',
+            ],
+        ],
+
+    ],
+
+    
 ];
