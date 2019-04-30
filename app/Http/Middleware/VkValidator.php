@@ -25,7 +25,7 @@ class VkValidator
         $group_id = $vk_request['group_id'];
 
         if ( !array_key_exists($group_id) )
-            return 'Not registereg group.';
+            return 'Not registered group.';
 
         if ( $groups_config[$group_id]['secret'] != $vk_request['secret'] )
             return 'Invalid secret key.';
