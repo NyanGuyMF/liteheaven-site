@@ -17,13 +17,13 @@ class VkValidator
     {
         $vk_request       = json_decode(file_get_contents('php://input'), true);
         $groups_config    = config('vk.groups');
-        $is_request_valid = array_key_exists('group_id') && array_key_exists('secret');
+        $is_request_valid = array_key_exists('group_id', $vk_request) && array_key_exists('secret', $vk_request);
 
         if ( !$is_request_valid )
             return 'Malformed request';
 
         $group_id = $vk_request['group_id'];
-            
+
         if ( !array_key_exists($group_id) )
             return 'Not registereg group.';
 
