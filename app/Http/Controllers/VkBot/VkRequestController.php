@@ -14,6 +14,8 @@ class VkRequestController extends Controller {
 
     public function handle() {
         $request = json_decode(file_get_contents('php://input'), true);
+        \Log::info($request);
+        \Log::info(json_decode(file_get_contents('php://input'), true));
 
         if (!(array_key_exists('type', $request) && array_key_exists('group_id', $request))) {
             return 'Malformed JSON request';
