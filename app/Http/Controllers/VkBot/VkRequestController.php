@@ -24,6 +24,8 @@ class VkRequestController extends Controller {
         switch (strtolower($request['type'])) {
             case 'confirmation':
                 return self::handleConfirmation($group_id);
+            case 'message_new':
+                break;
 
             default:
                 \Log::info('Unknown vk request type: '. $request['type']);
