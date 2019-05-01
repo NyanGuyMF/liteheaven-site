@@ -38,6 +38,12 @@ class MessageHandler
             );
             return 'ok';
         }
+
+        if ( !$command_manager->run_command($vk_request, $cmd_name, $args) ) {
+            \Log::error("Fail to execute $cmd_name command");
+        }
+
+        return 'ok';
     }
 }
 

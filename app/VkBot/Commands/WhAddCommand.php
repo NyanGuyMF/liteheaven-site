@@ -11,7 +11,7 @@ class WhAddCommand extends Command implements CommandExecutor
         parent::set_executor($this);
     }
 
-    public function on_command(mixed &$group_id, mixed &$user_id, mixed &$receiver, array &$args) {
+    public function on_command(mixed &$group_id, mixed &$sender, mixed &$receiver, array &$args) {
         if ( count($args) == 0 )
             return false;
 
