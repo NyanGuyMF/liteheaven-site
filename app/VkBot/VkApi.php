@@ -28,6 +28,7 @@ class VkApi
         }
 
         $message_obj = [
+            'random_id' => 0,
             'access_token' => $group_config['access_token'],
             'v' => $group_config['api_v'],
         ];
