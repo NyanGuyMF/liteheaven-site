@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\VkBot;
+namespace App\VkBot;
 
 class VkApi
 {

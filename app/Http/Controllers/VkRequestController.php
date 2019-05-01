@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\VkBot;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\VkBot\MessageHandler;
 
 class VkRequestController extends Controller {
     
