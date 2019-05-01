@@ -61,7 +61,7 @@ class CommandManager
     }
 
     public function is_cmd_exists(string &$cmd_name) {
-        if ( $name != null )
+        if ( $cmd_name != null )
             return $this->commands[$cmd_name] != null;
         else
             return false;
