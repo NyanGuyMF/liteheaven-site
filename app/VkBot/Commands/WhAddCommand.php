@@ -18,7 +18,7 @@ class WhAddCommand extends Command implements CommandExecutor
         VkApi::send_message(
             $group_id, [
                 'peer_id' => $receiver,
-                'text' => 'Hello!',
+                'message' => 'Hello!',
             ]
         );
     }
