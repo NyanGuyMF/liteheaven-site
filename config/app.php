@@ -234,12 +234,14 @@ return [
 
         'groups' => [
             '174017128' => [
+                'api_v' => '5.95',
                 'confirm' => '0ce90217',
                 'secret' => 'tZQLjd4ay94P9BWphedT',
+                'access_token' => '7a35b876cb2725f6eaaeaa03f19b364362ce71605bcadf9d093c7061ca85241d702a4d7a2e8be326e91a4',
             ],
         ],
 
     ],
 
-    
+
 ];
