@@ -6,7 +6,7 @@ class VkApi
 {
     private static $message_keys = [ 'message', 'attachment', 'keyboard' ];
 
-    private static $receiver_keys = [ 'user_ids', 'user_id', 'group_id', 'domain' ];
+    private static $receiver_keys = [ 'user_ids', 'user_id', 'group_id', 'domain', 'peer_id' ];
 
     /**
      * @return bool true if successfully sent.
