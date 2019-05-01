@@ -33,7 +33,7 @@ class CommandManager
         $group_id = $vk_request['group_id'];
         $sender = $vk_request['object']['from_id'];
         $receiver = $vk_request['object']['peer_id'];
-        
+
         if ( !self::is_cmd_exists($cmd_name) )
             return false;
 
