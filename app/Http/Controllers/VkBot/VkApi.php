@@ -13,8 +13,8 @@ class VkApi
      */
     public static function send_message(&$group_id, array &$parameters = []) {
         $group_config = config('app.vkbot.groups')[$group_id];
-        $has_receiver = self::array_keys_exists($this->receiver_keys, $parameters, true); 
-        $has_message = self::array_keys_exists($this->message_keys, $parameters, true)
+        $has_receiver = self::array_keys_exists(self::$receiver_keys, $parameters, true); 
+        $has_message = self::array_keys_exists(self::$message_keys, $parameters, true)
                 || array_key_exists('sticker_id', $parameters);
 
         if ( !$has_receiver ) {
@@ -72,12 +72,12 @@ class VkApi
             $message_obj['sticker_id'] = $parameters['sticker_id'];
         else 
             // else add other message attachments
-            foreach ( $this->message_keys as $message_key )
+            foreach ( self::$message_keys as $message_key )
                 if ( array_key_exists($message_key, $parameters) )
                     $message_obj[$message_key] = $parameters[$message_key];
 
         // add receivers to object
-        foreach ( $this->receiver_keys as $receiver_key )
+        foreach ( self::$receiver_keys as $receiver_key )
             if ( array_key_exists($receiver_key, $parameters) )
                 $message_obj[$receiver_key] = $parameters[$receiver_key];
     }

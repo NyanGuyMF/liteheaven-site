@@ -20,7 +20,7 @@ class VkRequestController extends Controller {
             case 'confirmation':
                 return self::handleConfirmation($group_id);
             case 'message_new':
-                return $this->message_handler->handle($request);
+                return self::$message_handler->handle($request);
 
             default:
                 \Log::info('Unknown vk request type: '. $request['type']);
