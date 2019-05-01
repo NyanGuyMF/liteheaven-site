@@ -82,7 +82,7 @@ class VkApi
                 $message_obj[$receiver_key] = $parameters[$receiver_key];
     }
 
-    private static function array_keys_exists(array &$keys, array &$array, bool &$at_least_one = false) {
+    private static function array_keys_exists(array &$keys, array &$array, bool $at_least_one = false) {
         $is_exists = false;
 
         foreach ( $keys as $key ) {
