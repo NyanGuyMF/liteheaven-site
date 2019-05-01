@@ -53,8 +53,7 @@ class CommandManager
     }
 
     /** @return bool Returns true if command added sucessfully, false otherwise */
-    public function add_command(Command &$cmd)
-    {
+    public function add_command(Command &$cmd) {
         if ( $cmd == null )
             return false;
 
@@ -63,7 +62,7 @@ class CommandManager
 
     public function is_cmd_exists(string &$cmd_name) {
         if ( $cmd_name != null )
-            return $this->commands[$cmd_name] != null;
+            return array_key_exists($cmd_name, $this->commands);
         else
             return false;
     }
