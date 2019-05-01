@@ -37,7 +37,7 @@ class CommandManager
         if ( !self::is_cmd_exists($cmd_name) )
             return false;
 
-        $cmd = $commands[$cmd_name];
+        $cmd = $this->commands[$cmd_name];
         $is_executed = $cmd->execute($group_id, $sender, $receiver, $args);
 
         if ( !$is_executed ) {
@@ -58,7 +58,7 @@ class CommandManager
         if ( $cmd == null )
             return false;
 
-        $this->command[$cmd->get_name()] = $cmd;
+        $this->commands[$cmd->get_name()] = $cmd;
     }
 
     public function is_cmd_exists(string &$cmd_name) {
