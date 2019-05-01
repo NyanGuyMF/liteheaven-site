@@ -29,15 +29,16 @@ class CommandManager
      *
      * @return bool true if command executed, false otherwise.
      */
-    public function run_command(
-        mixed &$group_id, mixed &$user_id, mixed &$receiver,
-        string &$name, array &$args
-    ) {
-        if ( !self::is_cmd_exists($name) )
+    public function run_command(array &$vk_request, string &$cmd_name, array &$args) {
+        $group_id = $vk_request['group_id'];
+        $sender = $vk_request['object']['from_id'];
+        $receiver = $vk_request['object']['peer_id'];
+        
+        if ( !self::is_cmd_exists($cmd_name) )
             return false;
 
-        $cmd = $commands[$name];
-        $is_executed = $cmd->execute($group_id, $user_id, $receiver, $args);
+        $cmd = $commands[$cmd_name];
+        $is_executed = $cmd->execute($group_id, $sender, $receiver, $args);
 
         if ( !$is_executed ) {
             VkApi::send_message(
