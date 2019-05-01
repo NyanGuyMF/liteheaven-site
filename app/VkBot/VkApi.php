@@ -4,7 +4,7 @@ namespace App\VkBot;
 
 class VkApi
 {
-    private static $message_keys = [ 'message', 'attachment', 'keyboard' ];
+    private static $message_keys = [ 'text', 'attachment', 'keyboard' ];
 
     private static $receiver_keys = [ 'user_ids', 'user_id', 'group_id', 'domain', 'peer_id' ];
 
