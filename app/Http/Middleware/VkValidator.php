@@ -16,7 +16,7 @@ class VkValidator
     public function handle($request, Closure $next)
     {
         $vk_request       = json_decode(file_get_contents('php://input'), true);
-        $groups_config    = config('vk.groups');
+        $groups_config    = config('app.vkbot.groups');
         $is_request_valid = array_key_exists('group_id', $vk_request) && array_key_exists('secret', $vk_request);
 
         if ( !$is_request_valid )
