@@ -11,7 +11,7 @@ class MessageHandler
      * @return 'ok' string if successfuly handled, error otherwise.
      */
     public function handle($vk_request) {
-        return response('ok');
+        return response('ok', 201);
     }
 
     private function handle_group_message($group_message) {
