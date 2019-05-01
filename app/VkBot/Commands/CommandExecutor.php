@@ -14,7 +14,7 @@ interface CommandExecutor
      * 
      * @return bool false if user gave invalid arguments, true otherwise.
      */
-    public function on_command(&$group_id, $sender, &$receiver, array &$args);
+    public function on_command($group_id, $sender, $receiver, array &$args);
 }
 
 ?>
