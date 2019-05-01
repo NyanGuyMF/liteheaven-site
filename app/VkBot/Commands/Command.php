@@ -30,7 +30,7 @@ abstract class Command
      */
     public function execute(mixed &$group_id, mixed &$user_id, mixed &$receiver, array &$args) {
         if ( $this->executor != null )
-            return $this->executor->on_command($user_id, $receiver, $args);
+            return $this->executor->on_command($group_id, $user_id, $receiver, $args);
         else
             return false;
     }
