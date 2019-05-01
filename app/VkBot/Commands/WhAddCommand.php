@@ -11,9 +11,9 @@ class WhAddCommand extends Command implements CommandExecutor
         parent::set_executor($this);
     }
 
-    public function on_command($group_id, $sender, $receiver, array &$args) {
+    public function on_command(&$group_id, &$sender, &$receiver, array &$args) {
         if ( count($args) == 0 )
-            return false;-
+            return false;
 
         VkApi::send_message(
             $group_id, [

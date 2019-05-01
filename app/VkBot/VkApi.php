@@ -11,7 +11,7 @@ class VkApi
     /**
      * @return bool true if successfully sent.
      */
-    public static function send_message(&$group_id, array &$parameters = []) {
+    public static function send_message(&$group_id, array $parameters = []) {
         $group_config = config('app.vkbot.groups')[$group_id];
         $has_receiver = self::array_keys_exists(self::$receiver_keys, $parameters, true); 
         $has_message = self::array_keys_exists(self::$message_keys, $parameters, true)
