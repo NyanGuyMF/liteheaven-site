@@ -28,7 +28,7 @@ abstract class Command
      * @return bool returns true if command executed successfully, false if
      *      executor doesn't exists or command wasn't executed.
      */
-    public function execute(mixed &$user_id, mixed $receiver, array &$args) {
+    public function execute(mixed $group_id, mixed $user_id, mixed $receiver, array $args) {
         if ( $this->executor != null )
             return $this->executor->on_command($user_id, $receiver, $args);
         else
