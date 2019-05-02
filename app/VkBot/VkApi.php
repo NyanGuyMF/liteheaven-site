@@ -35,6 +35,9 @@ class VkApi
 
         self::parse_params($message_obj, $parameters);
 
+        \Log::info('Sending request to VK:');
+        \Log::info($message_obj);
+        
         return self::send_message_request($message_obj);
     }
 
