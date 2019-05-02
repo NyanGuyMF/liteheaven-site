@@ -14,11 +14,8 @@ class WhAddCommand extends Command implements CommandExecutor
     }
 
     public function on_command(int &$group_id, int &$sender, int &$receiver, array &$args): bool {
-        \Log::info('1');
         if ( count($args) == 0 )
             return false;
-
-        \Log::info('2');
 
         $username = $args[0];
 

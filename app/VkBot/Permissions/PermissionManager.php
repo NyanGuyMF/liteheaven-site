@@ -14,6 +14,8 @@ class PermissionManager
         if ( $vk_user === null )
             return false;
 
+        \Log::info($vk_user->permissions);
+            
         foreach ( $vk_user->permissions as $perm ) {
             if ( ($perm == $permission) || ($perm == '*') ) {
                 $is_permissioned = true;
