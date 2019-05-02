@@ -10,7 +10,7 @@ class CreateVkUsersTable extends Migration
         Schema::connection('vk_bot')->create('vk_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('vk_id');
-            $table->json('permissions');
+            $table->json('permissions')->nullable();
         });
     }
 
