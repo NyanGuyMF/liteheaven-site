@@ -30,12 +30,12 @@ class MessageHandler
         $receiver = $vk_request['object']['peer_id'];
 
         if ( !$command_manager->is_cmd_exists($cmd_name) ) {
-            VkApi::send_message(
-                $vk_request['group_id'], [
-                    'peer_id' => $receiver,
-                    'text' => str_replace('{cmd}', $cmd_name, config('locale.error.cmd-doesnt-exists')),
-                ]
-            );
+            VkApi::send_message($vk_request['group_id'], [
+                'peer_id' => $receiver,
+                'messsage' => str_replace(
+                    '{cmd}', $cmd_name, config('locale')['error']['cmd-doesnt-exists']
+                ),
+            ]);
             return 'ok';
         }
 

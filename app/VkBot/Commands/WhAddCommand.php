@@ -23,7 +23,7 @@ class WhAddCommand extends Command implements CommandExecutor
             VkApi::send_message($group_id, [
                 'peer_id' => $receiver,
                 'message' => str_replace(
-                    '{cmd}', '/'. parent::get_name(), config('locale.error.no-permission')
+                    '{cmd}', '/'. parent::get_name(), config('locale')['error']['no-permission']
                 ),
             ]);
             return true;
@@ -41,7 +41,7 @@ class WhAddCommand extends Command implements CommandExecutor
 
         VkApi::send_message($group_id, [
             'peer_id' => $receiver,
-            'message' => str_replace('{nick}', $username, config('locale.info.whadded')),
+            'message' => str_replace('{nick}', $username, config('locale')['info']['whadded']),
         ]);
 
         return true;
