@@ -17,6 +17,8 @@ class MessageHandler
 
         if ( substr($message_text, 0, 1) == '/' ) {
             $args = preg_split('/(\/\w+)?\s/u', $message_text);
+            \Log::info($args);
+            \Log::info($message_text);
             preg_match('/^\/(\w+)/u', $message_text, $cmd_name);
 
             return MessageHandler::handle_command($vk_request, $cmd_name[1], $args);
