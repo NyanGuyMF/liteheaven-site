@@ -3,6 +3,8 @@
 namespace App\VkBot\Commands;
 
 use App\VkBot\VkApi;
+use App\VkBot\Permissions\PermissionManager;
+use App\WhitelistUser;
 
 class WhAddCommand extends Command implements CommandExecutor
 {
@@ -15,12 +17,32 @@ class WhAddCommand extends Command implements CommandExecutor
         if ( count($args) == 0 )
             return false;
 
-        VkApi::send_message(
-            $group_id, [
+        $username = $args[0];
+
+        if ( !PermissionManager::has_permission($sender, 'wh.add') ) {
+            VkApi::send_message($group_id, [
                 'peer_id' => $receiver,
-                'message' => 'Hello!',
-            ]
-        );
+                'message' => str_replace(
+                    '{cmd}', '/'. parent::get_name(), config('locale.error.no-permission')
+                ),
+            ]);
+            return true;
+        }
+
+        $whitelisted = WhitelistUser::where('name', $username)->first();
+
+        if ( $whitelisted === null ) {
+            $whitelisted = new WhitelistUser;
+            $whitelisted->name = $username;
+        }
+
+        $whitelisted->is_whitelisted = true;
+        $whitelisted->save();
+
+        VkApi::send_message($group_id, [
+            'peer_id' => $receiver,
+            'message' => str_replace('{nick}', $username, config('locale.info.whadded')),
+        ]);
 
         return true;
     }
