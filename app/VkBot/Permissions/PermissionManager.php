@@ -1,6 +1,6 @@
 <?php
 
-namespace App\VkBot\Permission;
+namespace App\VkBot\Permissions;
 
 use App\VkUser;
 
