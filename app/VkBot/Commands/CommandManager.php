@@ -29,7 +29,7 @@ class CommandManager
      *
      * @return bool true if command executed, false otherwise.
      */
-    public function run_command(array &$vk_request, string &$cmd_name, array &$args) {
+    public function run_command(array &$vk_request, string &$cmd_name, array &$args): bool {
         $group_id = $vk_request['group_id'];
         $sender = $vk_request['object']['from_id'];
         $receiver = $vk_request['object']['peer_id'];
@@ -53,14 +53,16 @@ class CommandManager
     }
 
     /** @return bool Returns true if command added sucessfully, false otherwise */
-    public function add_command(Command &$cmd) {
+    public function add_command(Command &$cmd): bool {
         if ( $cmd == null )
             return false;
 
         $this->commands[$cmd->get_name()] = $cmd;
+
+        return true;
     }
 
-    public function is_cmd_exists(string &$cmd_name) {
+    public function is_cmd_exists(string &$cmd_name): bool {
         if ( $cmd_name != null )
             return array_key_exists($cmd_name, $this->commands);
         else

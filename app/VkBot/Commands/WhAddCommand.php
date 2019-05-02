@@ -11,7 +11,7 @@ class WhAddCommand extends Command implements CommandExecutor
         parent::set_executor($this);
     }
 
-    public function on_command(&$group_id, &$sender, &$receiver, array &$args) {
+    public function on_command(int &$group_id, int &$sender, int &$receiver, array &$args): bool {
         if ( count($args) == 0 )
             return false;
 
@@ -21,6 +21,8 @@ class WhAddCommand extends Command implements CommandExecutor
                 'message' => 'Hello!',
             ]
         );
+
+        return true;
     }
 }
 

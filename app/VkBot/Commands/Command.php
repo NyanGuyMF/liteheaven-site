@@ -12,7 +12,7 @@ abstract class Command
         $this->executor = $executor;
     }
 
-    public function set_executor(CommandExecutor $executor) {
+    public function set_executor(CommandExecutor $executor): void {
         if ( $executor != null )
             $this->executor = $executor;
     }
@@ -28,14 +28,14 @@ abstract class Command
      * @return bool returns true if command executed successfully, false if
      *      executor doesn't exists or command wasn't executed.
      */
-    public function execute(&$group_id, &$user_id, &$receiver, array &$args) {
+    public function execute(int &$group_id, int &$user_id, int &$receiver, array &$args): bool {
         if ( $this->executor != null )
             return $this->executor->on_command($group_id, $user_id, $receiver, $args);
         else
             return false;
     }
 
-    public function get_name() {
+    public function get_name(): string {
         return $this->name;
     }
 }

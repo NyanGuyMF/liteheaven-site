@@ -11,7 +11,7 @@ class VkApi
     /**
      * @return bool true if successfully sent.
      */
-    public static function send_message(&$group_id, array $parameters = []) {
+    public static function send_message(int &$group_id, array $parameters = []): bool {
         $group_config = config('app.vkbot.groups')[$group_id];
         $has_receiver = self::array_keys_exists(self::$receiver_keys, $parameters, true); 
         $has_message = self::array_keys_exists(self::$message_keys, $parameters, true)
@@ -39,7 +39,7 @@ class VkApi
     }
 
     /** @return bool Returns true if message sent successfully, false otherwise */
-    private static function send_message_request(array &$message_obj) {
+    private static function send_message_request(array &$message_obj): bool {
         $response = json_decode(file_get_contents(
             'https://api.vk.com/method/messages.send?'. http_build_query($message_obj)
         ), true);
@@ -63,9 +63,9 @@ class VkApi
      * 
      * @return void
      */
-    private static function parse_params(array &$message_obj = [], array &$parameters = []) {
+    private static function parse_params(array &$message_obj = [], array &$parameters = []): void {
         if ( empty($message_obj) || empty($parameters) )
-            return $message_obj;
+            return;
 
         // add message to object
         if ( array_key_exists('sticker_id', $parameters) )
@@ -83,7 +83,7 @@ class VkApi
                 $message_obj[$receiver_key] = $parameters[$receiver_key];
     }
 
-    private static function array_keys_exists(array &$keys, array &$array, bool $at_least_one = false) {
+    private static function array_keys_exists(array &$keys, array &$array, bool $at_least_one = false): bool {
         $is_exists = false;
 
         foreach ( $keys as $key ) {

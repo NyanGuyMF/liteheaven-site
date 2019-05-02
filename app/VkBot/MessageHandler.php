@@ -12,7 +12,7 @@ class MessageHandler
      * @param array $vk_request Request from VK.
      * @return 'ok' string if successfuly handled, error otherwise.
      */
-    public static function handle(array &$vk_request) {
+    public static function handle(array &$vk_request): string {
         $message_text = $vk_request['object']['text'];
 
         if ( substr($message_text, 0, 1) == '/' ) {
@@ -25,7 +25,7 @@ class MessageHandler
         return 'ok';
     }
 
-    private static function handle_command(array &$vk_request, string &$cmd_name, array &$args) {
+    private static function handle_command(array &$vk_request, string &$cmd_name, array &$args): string {
         $command_manager = new CommandManager();
         $receiver = $vk_request['object']['peer_id'];
 
