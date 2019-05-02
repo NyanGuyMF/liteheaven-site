@@ -61,7 +61,7 @@ return [
 
         'vk_bot' => [
             'driver' => 'mysql',
-            'host' => 'liteheaven.ru',
+            'host' => 'localhost',
             'port' => env('DB_PORT', '3306'),
             'database' => 'vk_bot',
             'username' => 'vk_bot',
