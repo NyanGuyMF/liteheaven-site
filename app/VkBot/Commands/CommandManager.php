@@ -44,7 +44,7 @@ class CommandManager
             VkApi::send_message(
                 $group_id, [
                     'peer_id' => $receiver,
-                    'message' => config('locale')['usage'][$cmd->get_name()],
+                    'message' => config('locale.commands.usage.'. $cmd->get_name()),
                 ]
             );
         }

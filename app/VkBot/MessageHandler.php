@@ -33,7 +33,7 @@ class MessageHandler
             VkApi::send_message($vk_request['group_id'], [
                 'peer_id' => $receiver,
                 'messsage' => str_replace(
-                    '{cmd}', $cmd_name, config('locale')['error']['cmd-doesnt-exists']
+                    '{cmd}', $cmd_name, config('locale.commands.error.cmd-doesnt-exists')
                 ),
             ]);
             return 'ok';
