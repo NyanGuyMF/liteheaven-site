@@ -17,7 +17,7 @@ class WhAddCommand extends Command implements CommandExecutor
         if ( count($args) == 0 )
             return false;
 
-        $username = $args[0];
+        $username = $args[1];
 
         if ( !PermissionManager::has_permission($sender, 'wh.add') ) {
             VkApi::send_message($group_id, [

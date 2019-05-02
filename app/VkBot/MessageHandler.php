@@ -19,7 +19,7 @@ class MessageHandler
             $args = preg_split('/(\/\w+)?\s/u', $message_text);
             preg_match('/^\/(\w+)/u', $message_text, $cmd_name);
 
-            return MessageHandler::handle_command($vk_request, $cmd_name[1], $args[1]);
+            return MessageHandler::handle_command($vk_request, $cmd_name[1], $args);
         }
 
         return 'ok';
