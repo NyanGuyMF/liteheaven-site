@@ -14,7 +14,7 @@ class WhAddCommand extends Command implements CommandExecutor
     }
 
     public function on_command(int &$group_id, int &$sender, int &$receiver, array &$args): bool {
-        if ( count($args) == 0 )
+        if ( count($args) < 2 )
             return false;
 
         $username = $args[1];
