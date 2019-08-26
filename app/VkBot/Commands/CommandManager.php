@@ -8,19 +8,20 @@ class CommandManager
 {
     private $commands;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->commands = [];
 
         $whadd_cmd = new WhAddCommand();
         $this->commands[$whadd_cmd->get_name()] = $whadd_cmd;
+        $whrem_cmd = new WhRemCommand();
+        $this->commands[$whrem_cmd->get_name()] = $whrem_cmd;
     }
 
     /**
      * Runs command for given name.
-     * 
+     *
      * If command with given name doesn't exists it will return false.
-     * 
+     *
      * @param string|int    $group_id   Current group ID.
      * @param string|int    $user_id    The user who wants to run command.
      * @param string|int    $receiver   ID of user or conversation for output.
